@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ApplojaApplication",
+            "request": "launch",
+            "mainClass": "br.edu.uerr.apploja.ApplojaApplication",
+            "projectName": "apploja"
+        },
+        {
+            "type": "chrome",
+            "name": "http://127.0.0.1:3000/src/main/resources/templates/atualizaForm.html",
+            "request": "launch",
+            "url": "http://127.0.0.1:3000/src/main/resources/templates/atualizaForm.html"
+        }
+    ]
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <meta http-equiv="refresh" content="1; url=http://localhost:8080/empresa">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Usuarios</title>
+</head>
+<style>
+  body {
+    -webkit-animation: colorchange 60s infinite;
+    animation: colorchange 60s infinite;
+  }
+
+  @-webkit-keyframes colorchange {
+    0% {
+      background:
+        #24242c;
+    }
+
+    25% {
+      background:
+        #24242c;
+    }
+
+    50% {
+      background: #ffffff;
+    }
+
+    75% {
+      background: #ffffff;
+    }
+
+    100% {
+      background: #ffffff;
+    }
+  }
+
+  @keyframes colorchange {
+    0% {
+      background: #ffffff;
+    }
+
+    25% {
+      background: #ffffff;
+    }
+
+    50% {
+      background: #ffffff;
+    }
+
+    75% {
+      background: #ffffff;
+    }
+
+    100% {
+      background: #ffffff;
+    }
+  }
+</style>
+
+<body>
+  <style>
+    .container {
+      height: 300px;
+      overflow-y: scroll;
+    }
+  </style>
+  <div class="p-3 mb-2 bg-white text-dark">
+
+    <h1>
+      <div style="text-align:center">Usuarios </div>
+    </h1>
+
+    <div class="p-3 mb-2 bg-white text-dark">
+
+      <a href="cadastroUsuario"> <button class="btn btn-primary"> Novo Usuario</button></a>
+      <a href="empresa"> <button class="btn btn-primary">Voltar Para Pagina Principal</button></a>
+    </div>
+    <table class="table table-white" border="1">
+      <tr>
+        <td>Código Cliente</td>
+        <td>Nivel De Acesso</td>
+        <td>Nomee</td>
+        <td>CPF</td>
+        <td>RG</td>
+        <td>Telefone</td>
+        <td>Email</td>
+        <td>Data De Nascimento</td>
+        <td>Opções</td>
+      </tr>
+      <tr th:each="emp : ${listaUsuarios}">
+
+        <td th:text="${emp.id}"></td>
+        <td th:text="${emp.login}"></td>
+        <td th:text="${emp.nome}"></td>
+        <td th:text="${emp.cpf}"></td>
+        <td th:text="${emp.rg}"></td>
+        <td th:text="${emp.telefone}"></td>
+        <td th:text="${emp.email}"></td>
+        <td th:text="${emp.data_nascimento}"></td>
+
+        <td>
+          <a th:href="@{/form/{id}(id=${emp.id})}"><button class="btn btn-warning">Alterar</button></a>
+          <a th:href="@{/deletarEmpresa/{id}(id=${emp.id})}"><button class="btn btn-danger">Deletar</button></a>
+
+        </td>
+
+      </tr>
+    </table>
+</body>
+
+</html>
